@@ -1,0 +1,31 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$theme_fg_color: "@theme_fg_color";
+$theme_bg_color: "@theme_bg_color";
+
+window.Bar {
+  font-family: "JetBrains Mono";
+  background: transparent;
+  color: #{$theme_bg_color};
+  font-weight: bold;
+
+  >centerbox {
+    background: #{$theme_bg_color};
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 10px;
+    margin: 8px;
+  }
+
+  button {
+    border-radius: 8px;
+    margin-right: 2px;
+    margin-left: 2px;
+    background: white;
+    padding: 4px;
+    border: none;
+    color: black;
+  }
+
+}
