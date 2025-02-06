@@ -1,5 +1,7 @@
 /*
 This file returns the Bluetooth module.
+
+Todo: add currently connected instead of list.
 */
 
 import Bluetooth from "gi://AstalBluetooth";
@@ -8,10 +10,6 @@ import { bind } from "astal";
 import { exec } from "astal/process";
 
 const bluetooth = Bluetooth.get_default();
-
-for (const device of bluetooth.get_devices()) {
-  print(device.name);
-}
 
 function trimTitle(title: string) {
   if (title.length > 20) {
@@ -33,7 +31,11 @@ export default function BluetoothComponent() {
         <box>
           <icon valign={Gtk.Align.CENTER} icon="bluetooth-symbolic" vexpand />{" "}
           {bind(bluetooth, "devices").as((devices) => {
-            return <label label={trimTitle(devices[0].name)} />;
+            if (devices[0]) {
+              return <label label={trimTitle(devices[0].name)} />;
+            } else {
+              return <label label="No devices" />;
+            }
           })}
         </box>
       </button>

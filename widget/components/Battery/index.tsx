@@ -11,7 +11,7 @@ const battery = Battery.get_default();
 
 export default function BatteryComponent() {
   return (
-    <button onClick={() => print("hello")} halign={Gtk.Align.CENTER}>
+    <button halign={Gtk.Align.CENTER}>
       <box>
         <icon valign={Gtk.Align.CENTER} icon="battery-symbolic" vexpand />{" "}
         <label

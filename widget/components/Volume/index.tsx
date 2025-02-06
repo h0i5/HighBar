@@ -7,10 +7,7 @@ import Wp from "gi://AstalWp";
 
 const audio = Wp.get_default().audio;
 
-print(audio.default_speaker.volume);
-
 export default function VolumeComponent() {
-  print(audio.default_speaker.volume);
   return (
     <button halign={Gtk.Align.CENTER}>
       <box>

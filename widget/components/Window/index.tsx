@@ -19,7 +19,6 @@ export default function ActiveWindow() {
   return (
     <box>
       {bind(hyprland, "focused_client").as((client) => {
-        print(client.title);
         return (
           <box>
             <button className="active-client">

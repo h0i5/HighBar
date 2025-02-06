@@ -1,3 +1,6 @@
+/*
+This file returns the workspaces module for Hyprland.
+*/
 import Hyprland from "gi://AstalHyprland";
 import { bind } from "astal";
 
