@@ -1,6 +1,7 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3";
 
 import Time from "./components/Time";
+import MediaComponent from "./components/Media";
 import Workspaces from "./components/Workspaces";
 import BatteryComponent from "./components/Battery";
 import Wifi from "./components/Wifi";
@@ -27,7 +28,9 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
 
           <Workspaces />
         </box>
-        <box halign={Gtk.Align.CENTER}></box>
+        <box halign={Gtk.Align.CENTER}>
+          <MediaComponent />
+        </box>
         <box halign={Gtk.Align.END}>
           <BatteryComponent />
           <Wifi />
