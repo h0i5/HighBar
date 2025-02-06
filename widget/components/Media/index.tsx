@@ -1,32 +1,37 @@
-import Apps from "gi://AstalApps";
+/*
+This file contains the Media Module,
+Currently supports:
+    Spotify
+*/
+
 import { bind } from "astal";
 import Mpris from "gi://AstalMpris";
 
 const spotify = Mpris.Player.new("spotify");
 
-if (spotify.available) print(spotify.title);
+//print(spotify.get_position());
+//print(spotify.get_length());
 
-const apps = new Apps.Apps({
-  nameMultiplier: 2,
-  entryMultiplier: 0,
-  executableMultiplier: 2,
-});
-
-for (const app of apps.fuzzy_query("spotify")) {
-  print(app.name);
+function trimTitle(title: string) {
+  if (title.length > 20) {
+    return title.slice(0, 20) + "...";
+  } else {
+    return title;
+  }
 }
 
 export default function MediaComponent() {
   return (
-    <box>
+    <box className="media-module">
       <button onClick={() => spotify.play_pause()}>
         <box>
+          <box>󰓇</box>
           {bind(spotify, "artist").as((artist) => {
-            return artist;
-          })}
-          -
+            return trimTitle(artist);
+          })}{" "}
+          -{" "}
           {bind(spotify, "title").as((title) => {
-            return title;
+            return trimTitle(title);
           })}
         </box>
       </button>

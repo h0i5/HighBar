@@ -19,14 +19,6 @@ function ActiveWorkspace(props: { id: number }) {
 
 const hyprland = Hyprland.get_default();
 
-//for (const client of hyprland.get_clients()) {
-//  print(client.title);
-//}
-//
-//for (const client of hyprland.get_clients()) {
-//  print(client.title);
-//}
-//
 export default function Workspaces() {
   return (
     <box className="workspaces">
@@ -44,6 +36,7 @@ export default function Workspaces() {
                         onClick={() => {
                           focused_workspace.focus();
                         }}
+                        className="active-workspace-button"
                       >
                         <ActiveWorkspace id={focused_workspace.get_id()} />
                       </button>

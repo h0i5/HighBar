@@ -9,13 +9,14 @@ window.Bar {
   font-weight: bold;
 
   >centerbox {
-    background: #{$theme_bg_color};
+    background: transparent;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 10px;
-    margin: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   button {
@@ -30,17 +31,35 @@ window.Bar {
 
   .active-workspace {
     margin: 0px;
-    background: black;
+    background: #212121;
+    border-style: solid;
+    border-color: white;
+    color: white;
+  }
+
+  .active-workspace-button {
+    margin: 0px;
+    background: #212121;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
     color: white;
   }
 
 
+  .active-client {
+    margin: 0px;
+    background: #212121;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+  }
 
   .workspaces {
     margin-left: 6px;
     margin-right: 6px;
   }
-
 
   .workspaces button {
     margin-left: 2px;
@@ -49,6 +68,18 @@ window.Bar {
 
   .workspaces label {
     padding: 0px;
+  }
+
+  .distro-module {
+    padding-left: 10px;
+    padding-right: 14px;
+
+  }
+
+  .media-module box {
+    margin-right: 10px;
+    margin-left: 4px;
+
   }
 
 }
