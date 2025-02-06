@@ -20,12 +20,35 @@ window.Bar {
 
   button {
     border-radius: 8px;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 4px;
+    margin-left: 4px;
     background: white;
     padding: 4px;
     border: none;
     color: black;
+  }
+
+  .active-workspace {
+    margin: 0px;
+    background: black;
+    color: white;
+  }
+
+
+
+  .workspaces {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+
+  .workspaces button {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .workspaces label {
+    padding: 0px;
   }
 
 }

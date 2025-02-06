@@ -20,12 +20,14 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
       application={App}
     >
       <centerbox>
-        <button onClicked="echo hello" halign={Gtk.Align.START}>
-          A
-        </button>
-        <box halign={Gtk.Align.CENTER}>
+        <box halign={Gtk.Align.START}>
+          <button onClicked="echo hello" halign={Gtk.Align.START}>
+            A
+          </button>
+
           <Workspaces />
         </box>
+        <box halign={Gtk.Align.CENTER}></box>
         <box halign={Gtk.Align.END}>
           <BatteryComponent />
           <Wifi />

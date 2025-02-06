@@ -1,35 +1,35 @@
 import Hyprland from "gi://AstalHyprland";
 import { bind } from "astal";
 
-function InactiveWorkspace() {
+function InactiveWorkspace(props: { id: number }) {
   return (
     <button>
-      <label label="IN" />
+      <label label={props.id.toString()} />
     </button>
   );
 }
 
-function ActiveWorkspace() {
+function ActiveWorkspace(props: { id: number }) {
   return (
-    <button>
-      <label label="A" />
+    <button className="active-workspace">
+      <label label={props.id.toString()} />
     </button>
   );
 }
 
 const hyprland = Hyprland.get_default();
 
-for (const client of hyprland.get_clients()) {
-  print(client.title);
-}
-
-for (const client of hyprland.get_clients()) {
-  print(client.title);
-}
-
+//for (const client of hyprland.get_clients()) {
+//  print(client.title);
+//}
+//
+//for (const client of hyprland.get_clients()) {
+//  print(client.title);
+//}
+//
 export default function Workspaces() {
   return (
-    <box>
+    <box className="workspaces">
       {bind(hyprland, "workspaces").as((workspaces) => {
         //sort workspaces
         workspaces.sort((a, b) => a.get_id() - b.get_id());
@@ -45,7 +45,7 @@ export default function Workspaces() {
                           focused_workspace.focus();
                         }}
                       >
-                        <ActiveWorkspace />
+                        <ActiveWorkspace id={focused_workspace.get_id()} />
                       </button>
                     );
                   }
@@ -55,7 +55,7 @@ export default function Workspaces() {
                         workspaces.focus();
                       }}
                     >
-                      <InactiveWorkspace />
+                      <InactiveWorkspace id={workspaces.get_id()} />
                     </button>
                   );
                 },
