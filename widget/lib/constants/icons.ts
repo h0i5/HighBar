@@ -41,15 +41,16 @@ export function getIcon(distro: string) {
   }
 }
 
-export const defaultApplicationIcons = {
-  "[dD]iscord": "󰙯",
-  "^thunderbird": "",
-  "class:wezterm$": "",
+export const defaultApplicationIcons: Record<string, string> = {
+  discord: "󰙯",
+  thunderbird: "",
+  wezterm: "",
   "draw.io": "󰇟",
   "firefox-developer-edition": "",
   "google-chrome": "",
   "title:YouTube ": "",
-  Spotify: "󰓇",
+  spotify: "󰓇",
+  spicetify: "󰓇",
   chromium: "",
   code: "󰨞",
   dbeaver: "",
@@ -61,12 +62,16 @@ export const defaultApplicationIcons = {
   keymapp: "",
   kitty: "",
   obsidian: "󰠮",
-  password$: "",
-  qBittorrent$: "",
+  password: "",
+  qBittorrent: "",
   rofi: "",
   slack: "",
   spotube: "󰓇",
   steam: "",
   telegram: "",
   vlc: "󰕼",
+};
+
+export const getApplicationIcon = (appName: string): string => {
+  return defaultApplicationIcons[appName.toLowerCase()] || "󰀏";
 };

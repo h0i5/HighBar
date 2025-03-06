@@ -12,6 +12,7 @@ var distro = exec("bash -c 'grep '^ID=' /etc/os-release | cut -d= -f2'")
 
 import Hyprland from "gi://AstalHyprland";
 const hyprland = Hyprland.get_default();
+import { getApplicationIcon } from "../../lib/constants/icons";
 
 function trimClientTitle(title: string) {
   if (title.length > 20) {
@@ -29,7 +30,7 @@ export default function ActiveWindow() {
           return (
             <box>
               <button className="active-client">
-                {`${getIcon(distro)} ${""} ${trimClientTitle(client.title)}`}
+                {`${getApplicationIcon(client.class.toLowerCase())} ${""} ${trimClientTitle(client.class)}`}
               </button>
             </box>
           );
