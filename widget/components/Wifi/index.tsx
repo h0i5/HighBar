@@ -14,7 +14,6 @@ export default function Wifi() {
     <button halign={Gtk.Align.CENTER}>
       <box>
         {bind(network, "wifi").as((wifi) => {
-          print(wifi.get_ssid());
           return (
             <box>
               <icon

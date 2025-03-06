@@ -6,7 +6,7 @@ import { bind } from "astal";
 
 function InactiveWorkspace(props: { id: number }) {
   return (
-    <button>
+    <button className="inactive-workspace">
       <label label={props.id.toString()} />
     </button>
   );
@@ -50,6 +50,7 @@ export default function Workspaces() {
                       onClick={() => {
                         workspaces.focus();
                       }}
+                      className="inactive-workspace-button"
                     >
                       <InactiveWorkspace id={workspaces.get_id()} />
                     </button>

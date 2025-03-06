@@ -1,0 +1,114 @@
+window.Bar {
+  font-family: "JetBrains Mono";
+  background: transparent;
+  color: #1e1e2e;
+  font-weight: bold;
+}
+window.Bar > centerbox {
+  background: transparent;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+window.Bar button {
+  border-radius: 8px;
+  margin-right: 4px;
+  margin-left: 4px;
+  background: white;
+  padding: 3px;
+  border: none;
+  color: black;
+}
+window.Bar .active-workspace {
+  margin: 0px;
+  background: #212121;
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+window.Bar .active-workspace-button {
+  margin: 0px;
+  background: #212121;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+}
+window.Bar .active-client {
+  margin: 0px;
+  background: #212121;
+  border-style: solid;
+  border-width: 2px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: white;
+  color: white;
+}
+window.Bar .workspaces {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+window.Bar .workspaces button {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+window.Bar .workspaces label {
+  padding: 0px;
+}
+window.Bar .distro-module {
+  padding-left: 10px;
+  padding-right: 14px;
+}
+window.Bar .media-module box {
+  margin-right: 10px;
+  margin-left: 4px;
+}
+
+box.MediaPlayer {
+  padding: 0.6rem;
+  background-color: @theme_bg_color;
+}
+box.MediaPlayer box.cover-art {
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 9px;
+  margin-right: 0.6rem;
+  background-size: contain;
+  background-position: center;
+}
+box.MediaPlayer box.title label {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+box.MediaPlayer scale {
+  padding: 0;
+  margin: 0.4rem 0;
+}
+box.MediaPlayer scale trough {
+  min-height: 8px;
+}
+box.MediaPlayer scale highlight {
+  background-color: @theme_fg_color;
+}
+box.MediaPlayer scale slider {
+  all: unset;
+}
+box.MediaPlayer centerbox.actions {
+  min-width: 220px;
+}
+box.MediaPlayer centerbox.actions button {
+  min-width: 0;
+  min-height: 0;
+  padding: 0.4rem;
+  margin: 0 0.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

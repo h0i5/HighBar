@@ -3,6 +3,12 @@ This file returns the module which shows the currently focused client.
 */
 
 import { bind } from "astal";
+import { getIcon } from "../../lib/constants/icons";
+import { exec } from "astal/process";
+
+var distro = exec("bash -c 'grep '^ID=' /etc/os-release | cut -d= -f2'")
+  .trim()
+  .replace(/"/g, "");
 
 import Hyprland from "gi://AstalHyprland";
 const hyprland = Hyprland.get_default();
@@ -19,13 +25,17 @@ export default function ActiveWindow() {
   return (
     <box>
       {bind(hyprland, "focused_client").as((client) => {
-        return (
-          <box>
-            <button className="active-client">
-              {trimClientTitle(client.title)}
-            </button>
-          </box>
-        );
+        if (client) {
+          return (
+            <box>
+              <button className="active-client">
+                {`${getIcon(distro)} ${""} ${trimClientTitle(client.title)}`}
+              </button>
+            </box>
+          );
+        } else {
+          return <box />;
+        }
       })}
     </box>
   );

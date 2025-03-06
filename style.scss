@@ -1,85 +1,133 @@
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$theme_fg_color: "@theme_fg_color";
-$theme_bg_color: "@theme_bg_color";
+// Define common colors and spacing
+$theme_bg_color: #1e1e2e;
+$theme_fg_color: #ffffff;
+$active_bg_color: #1e1e2e;
+$button_bg_color: #1e1e2e;
+$button_text_color: #545768;
+$active_button_text_color: #a6adc8;
+$inactive_button_text_color: #555869;
+$foreground_text_color: #bac2e0;
+$border_color: #1e1e2e;
+$padding_small: 2px;
+$padding_medium: 7px;
+$padding_large: 10px;
+$margin_small: 2px;
+$margin_medium: 4px;
+$margin_large: 6px;
+$border_radius_small: 8px;
+$border_radius_large: 10px;
 
 window.Bar {
   font-family: "JetBrains Mono";
   background: transparent;
-  color: #{$theme_bg_color};
+  color: $theme_bg_color;
   font-weight: bold;
 
   >centerbox {
     background: transparent;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding: $padding_small;
+    border-radius: $border_radius_large;
+    margin: $margin_small 0;
   }
 
   button {
-    border-radius: 8px;
-    margin-right: 4px;
-    margin-left: 4px;
-    background: white;
-    padding: 4px;
+    border-radius: $border_radius_small;
+    margin: 0 $margin_medium;
+    background: $button_bg_color;
+    padding: $padding_small + 1;
     border: none;
-    color: black;
+    color: $foreground_text_color;
   }
 
-  .active-workspace {
-    margin: 0px;
-    background: #212121;
-    border-style: solid;
-    border-color: white;
-    color: white;
-  }
-
+  .active-workspace,
   .active-workspace-button {
-    margin: 0px;
-    background: #212121;
+    margin: 0;
+    background: $active_bg_color;
     border-style: solid;
-    border-width: 2px;
-    border-color: white;
-    color: white;
+    border-color: $border_color;
+    color: $active_button_text_color;
+    transition: all 0.3s ease-in-out;
   }
 
+
+  .inactive-workspace,
+  .inactive-workspace-button {
+    margin: 0;
+    color: $inactive_button_text_color;
+    transition: all 0.3s ease-in-out;
+  }
 
   .active-client {
-    margin: 0px;
-    background: #212121;
-    border-style: solid;
+    padding: 0 $padding_large;
     border-width: 2px;
-    border-color: white;
-    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 
   .workspaces {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
+    margin: 0 $margin_large;
+    background-color: $theme_bg_color;
+    border-radius: $border_radius_large;
 
-  .workspaces button {
-    margin-left: 2px;
-    margin-right: 2px;
-  }
-
-  .workspaces label {
-    padding: 0px;
+    button {
+      margin: 0 $margin_small;
+    }
   }
 
   .distro-module {
-    padding-left: 10px;
-    padding-right: 14px;
-
+    padding: $padding_medium $padding_large;
+    padding-right: 12px; //idk why but my logo is misaligned without it
   }
 
   .media-module box {
-    margin-right: 10px;
-    margin-left: 4px;
+    margin: 0 $margin_large 0 $margin_medium;
+  }
+}
 
+box.MediaPlayer {
+  padding: 0.6rem;
+  background-color: $theme_bg_color;
+
+  box.cover-art {
+    min-width: 120px;
+    min-height: 120px;
+    border-radius: 9px;
+    margin-right: 0.6rem;
+    background-size: contain;
+    background-position: center;
   }
 
+  box.title label {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  scale {
+    padding: 0;
+    margin: 0.4rem 0;
+
+    trough {
+      min-height: 8px;
+    }
+
+    highlight {
+      background-color: $theme_fg_color;
+    }
+
+    slider {
+      all: unset;
+    }
+  }
+
+  centerbox.actions {
+    min-width: 220px;
+
+    button {
+      min-width: 0;
+      min-height: 0;
+      padding: 0.4rem;
+      margin: 0 0.2rem;
+    }
+  }
 }

@@ -27,11 +27,13 @@ export default function MediaComponent() {
         <box>
           <box>󰓇</box>
           {bind(spotify, "artist").as((artist) => {
-            return trimTitle(artist);
+            if (artist) return trimTitle(artist);
+            else return "";
           })}{" "}
           -{" "}
           {bind(spotify, "title").as((title) => {
-            return trimTitle(title);
+            if (title) return trimTitle(title);
+            else return "";
           })}
         </box>
       </button>
