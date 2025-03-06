@@ -57,6 +57,8 @@ export const defaultApplicationIcons: Record<string, string> = {
   edge: "󰇩",
   evince: "",
   firefox: "",
+  "zen-browser": "",
+  "zen-beta": "",
   foot: "",
   keepassxc: "",
   keymapp: "",
